@@ -14,7 +14,9 @@
 				  "django-html": "html"
 				},
 			"extensions": [
-				"bibhasdn.django-html"
+				"bibhasdn.django-html",
+				"batisteo.vscode-django",
+				"bigonesystems.django"
 			]
 			
 		}
