@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+
+{% block title %}Home{% endblock title %}
+
+{% block content %}
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Delicious Food Delivered To Your Doorstep</h1>
+                <p>Experience the best cuisine from top restaurants in your area. Fast delivery, great prices, and amazing taste guaranteed!</p>
+                <button class="hero-button">Order Now</button>
+            </div>
+            <div class="hero-image">
+                <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Delicious Food">
+            </div>
+        </section>
+
+        <section class="features">
+            <h2 style="text-align: center; margin-bottom: 40px;">Why Choose Us</h2>
+            <div class="menu-grid">
+                <div class="food-card">
+                    <div style="padding: 30px; text-align: center;">
+                        <div style="font-size: 2.5rem; margin-bottom: 20px;">🚚</div>
+                        <h3>Fast Delivery</h3>
+                        <p>Get your food delivered in under 30 minutes or it's free</p>
+                    </div>
+                </div>
+                <div class="food-card">
+                    <div style="padding: 30px; text-align: center;">
+                        <div style="font-size: 2.5rem; margin-bottom: 20px;">🍔</div>
+                        <h3>Quality Food</h3>
+                        <p>Only the freshest ingredients from trusted suppliers</p>
+                    </div>
+                </div>
+                <div class="food-card">
+                    <div style="padding: 30px; text-align: center;">
+                        <div style="font-size: 2.5rem; margin-bottom: 20px;">💰</div>
+                        <h3>Best Prices</h3>
+                        <p>Affordable meals without compromising on quality</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <footer>
+        <p>&copy; 2023 FoodExpress. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Navbar toggle functionality
+        document.querySelector('.menu-toggle').addEventListener('click', function() {
+            this.classList.toggle('active');
+            document.querySelector('.nav-links').classList.toggle('active');
+        });
+    </script>
+    {% endblock content %}

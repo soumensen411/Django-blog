@@ -1,0 +1,93 @@
+{% extends "base.html" %}
+{% block title %}Feedback{% endblock title %}
+    {% block content %}
+    <main>
+        <section class="feedback-hero">
+            <h1>Your Voice Matters</h1>
+            <p>Help us improve by sharing your dining experience</p>
+        </section>
+
+        <section class="feedback-container">
+            <div class="feedback-form">
+                <h2>Send Us Your Feedback</h2>
+                <form id="feedbackForm">
+                    <div class="form-group">
+                        <label for="name">Your Name</label>
+                        <input type="text" id="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="order">Order Number (Optional)</label>
+                        <input type="text" id="order">
+                    </div>
+                    <div class="form-group">
+                        <label>How would you rate your experience?</label>
+                        <div class="rating">
+                            <input type="radio" id="star5" name="rating" value="5">
+                            <label for="star5">★</label>
+                            <input type="radio" id="star4" name="rating" value="4">
+                            <label for="star4">★</label>
+                            <input type="radio" id="star3" name="rating" value="3">
+                            <label for="star3">★</label>
+                            <input type="radio" id="star2" name="rating" value="2">
+                            <label for="star2">★</label>
+                            <input type="radio" id="star1" name="rating" value="1">
+                            <label for="star1">★</label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Your Feedback</label>
+                        <textarea id="message" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">Submit Feedback</button>
+                </form>
+            </div>
+
+            <div class="testimonials">
+                <h2>What Our Customers Say</h2>
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <div class="rating">★★★★★</div>
+                        <p>"The best food delivery service I've ever used! The pasta was perfectly al dente and arrived piping hot."</p>
+                        <div class="customer">
+                            <img src="https://randomuser.me/api/portraits/women/43.jpg" alt="Sarah J.">
+                            <span>Sarah J.</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <div class="rating">★★★★☆</div>
+                        <p>"Consistently good quality. I order at least twice a week and have never been disappointed."</p>
+                        <div class="customer">
+                            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Michael T.">
+                            <span>Michael T.</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2023 FoodExpress. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Navbar toggle
+        document.querySelector('.menu-toggle').addEventListener('click', function() {
+            this.classList.toggle('active');
+            document.querySelector('.nav-links').classList.toggle('active');
+        });
+
+        // Feedback form submission
+        document.getElementById('feedbackForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for your feedback! We appreciate your time.');
+            this.reset();
+        });
+    </script>
+    {% endblock content %}
