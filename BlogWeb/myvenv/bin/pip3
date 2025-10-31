@@ -1,4 +1,4 @@
-#!/workspaces/Django-blog/BlogWeb/myvenv/bin/python3
+#!/workspaces/Django-blog/BlogWeb/myvenv/bin/python
 # -*- coding: utf-8 -*-
 import re
 import sys
