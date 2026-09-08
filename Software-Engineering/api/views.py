@@ -4,7 +4,7 @@ from rest_framework.renderers import JSONRenderer
 from .serializers import StudentSerializer
 from django.http import HttpResponse
 import io
-from rest_framework.parsers import JSONparsers
+from rest_framework.parsers import JSONParser
 from django.views.decorators.csrf import csrf_exempt
 # Create your views here.
 
@@ -21,3 +21,16 @@ def StudentDetail(request,pk):
     return HttpResponse(json_data)
 
 @csrf_exempt
+def createStudentView(request):
+    if request.method == 'POST':
+        json_data = request.body
+        stream = io.BytesIO(json_data)
+        parser_data = JSONParser().parse(stream)
+        serializer = StudentSerializer(data=parser_data)
+        if serializer.is_valid():
+            serializer.save()
+            res = {'msg':'Data Created'}
+            json_data = JSONRenderer().render(res)
+            return HttpResponse(json_data, content_type='application/json')
+        error = serializer.errors
+        return HttpResponse(error, content_type='application/json')

@@ -1,10 +1,10 @@
 import requests
 import json
 
-URL = "http://127.0.0.1:8000/creatstudent/"
+URL = "http://127.0.0.1:8000/createstudent/"
 
 data = {
-    'name': 'Nasimul Islam',
+    'name': 'kakashi sensei',
     'roll':45,
     'section':'6DM'
 }
