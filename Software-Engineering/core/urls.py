@@ -17,11 +17,13 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from django.views.generic import RedirectView
-from api.views import StudentList, StudentDetail
+from api.views import StudentList, StudentDetail,createStudentView
+
 
 urlpatterns = [
     path('', RedirectView.as_view(url='students/', permanent=False)),
     path('admin/', admin.site.urls),
     path('students/', StudentList),
     path('students/<int:pk>/', StudentDetail),
+    path('createstudent/',createStudentView),
 ]

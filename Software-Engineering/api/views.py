@@ -3,6 +3,9 @@ from .models import Student
 from rest_framework.renderers import JSONRenderer
 from .serializers import StudentSerializer
 from django.http import HttpResponse
+import io
+from rest_framework.parsers import JSONparsers
+from django.views.decorators.csrf import csrf_exempt
 # Create your views here.
 
 def StudentList(request):
@@ -16,3 +19,5 @@ def StudentDetail(request,pk):
     serializer = StudentSerializer(student)
     json_data = JSONRenderer().render(serializer.data)
     return HttpResponse(json_data)
+
+@csrf_exempt
